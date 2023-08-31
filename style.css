@@ -47,7 +47,9 @@ body {
     font-weight: 400;
     user-select: none;
 }
-
+input{
+    accent-color: var(--Color5);
+  }
 .DevvarenaLogo img {
     width: 30px;
 }

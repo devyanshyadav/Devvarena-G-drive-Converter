@@ -1,108 +1,170 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Devvarena | G-Drive Direct Link Generator </title>
-    <meta name="description" content="Page description goes here.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
-        integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Devvarena | G-Drive Direct Link Generator</title>
+    <meta name="description" content="Page description goes here." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+      integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/chunks/style.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
+  </head>
 
-
-</head>
-
-<body>
-
+  <body>
     <header class="gdriveTransHeader">
-        <div class="DevvarenaLogo" onclick="location.reload()">
-            <img src="/assets/logo.svg" / alt="LOGO">Devv<b>Arena.</b>
-        </div>
-        <h3>Google Drive Direct Link Generator</h3>
-
+      <div class="DevvarenaLogo" onclick="location.reload()">
+        <img src="/assets/logo.svg" / alt="LOGO">Devv<b>Arena.</b>
+      </div>
+      <h3>Google Drive Direct Link Generator</h3>
     </header>
     <main class="gdriveTransMain">
-        <section class="leftGdriveTransSection">
-            <div class="inputGdriveTransDiv">
-                <input type="text" class="inputGdriveTrans" placeholder="Enter Gdrive Image Url"><button class="GdriveTransButton" onclick="gdriveTransButtonFunction()">Preview</button>
-            </div>
-            <div class="gdriveTransSettings ">
-                <span class=" range-wrap">
-                    Dimension<input type="range" class="range" id="gdriveTransDimension" min="1" max="100" step="1" value="50">
-  <output class="bubble"></output>
-                  </span>
+      <section class="leftGdriveTransSection">
+        <div class="inputGdriveTransDiv">
+          <input
+            type="text"
+            class="inputGdriveTrans"
+            placeholder="Enter Gdrive Image Url"
+          /><button
+            class="GdriveTransButton"
+            onclick="gdriveTransButtonFunction()"
+          >
+            Preview
+          </button>
+        </div>
+        <div class="gdriveTransSettings">
+          <span class="range-wrap">
+            Dimension<input
+              type="range"
+              class="range"
+              id="gdriveTransDimension"
+              min="1"
+              max="100"
+              step="1"
+              value="50"
+            />
+            <output class="bubble"></output>
+          </span>
+        </div>
 
-            </div>
+        <div class="selectGdriveTransLink">
+          <label class="CopyImg" onclick="gdriveTransToConvert()"
+            >For Img
+            <input
+              type="radio"
+              name="CopyType"
+              value="Img"
+              checked
+              onclick="handleRadioClick(event)"
+            />
+          </label>
+          <label class="CopyUrl" onclick="gdriveTransToConvert()"
+            >For Url
+            <input
+              type="radio"
+              name="CopyType"
+              value="Url"
+              onclick="handleRadioClick(event)"
+            />
+          </label>
+          <label class="CopyDirect" onclick="gdriveTransToConvert()">
+            Direct
+            <input
+              type="radio"
+              name="CopyType"
+              value="Direct"
+              onclick="handleRadioClick(event)"
+            />
+          </label>
 
+          <label class="lazyLoadGdriveTrans">
+            Lazy Loading
+            <input type="checkbox" class="lazyLoadGdriveTransCheck" />
+          </label>
+          <button
+            class="gdriveConvertButton"
+            onclick="gdriveTransToConvert('Converted')"
+          >
+            Convert
+          </button>
+        </div>
 
-
-            <div class="selectGdriveTransLink">
-                <label class="CopyImg" onclick="gdriveTransToConvert()">For Img
-  <input type="radio" name="CopyType" value="Img" checked onclick="handleRadioClick(event)">  
-</label>
-                <label class="CopyUrl" onclick="gdriveTransToConvert()">For Url
-  <input type="radio" name="CopyType" value="Url" onclick="handleRadioClick(event)">  
-</label>
-                <label class="CopyDirect" onclick="gdriveTransToConvert()"> Direct
-  <input type="radio" name="CopyType" value="Direct" onclick="handleRadioClick(event)">  
-</label>
-
-                <label class="lazyLoadGdriveTrans"> Lazy Loading
-    <input type="checkbox" class="lazyLoadGdriveTransCheck">  
-  </label>
-                <button class="gdriveConvertButton" onclick="gdriveTransToConvert('Converted')">Convert</button>
-
-            </div>
-
-
-            <div class="getCopyGdriveTransLink">
-                <pre class="getGdriveCopiedCodeDiv"></pre>
-                <button class="getCopyGdriveTransLinkButton" onclick="copyGdriveTransFunction()">Copy Link</button>
-            </div>
-        </section>
-        <section class="rightGdriveTransSection">
-            <span class="stepsFollow">To get your sharing URL, follow these steps <i class="ri-arrow-down-s-line" onclick="showSteps()"></i></span>
-            <div class="howToUse">
-                <div>
-                    <span>Step 1</span>
-                    <img src="https://drive.google.com/uc?id=1jmSXFWBPSXpeXdNvF4JxZM76N2pymouV"/>
-                </div>
-                <div>
-                    <span>Step 2</span>
-                    <img src="https://drive.google.com/uc?id=1bZJqZk9vuoqyrniIi0kHqvk9_FYF4Lfh"/>
-                </div>
-                <div>
-                    <span>Step 3</span>
-                    <img src="https://drive.google.com/uc?id=1Urvz5vmNUnZa9dAuJWuk8GSnnHDlcVxM"/>
-                </div>
-                <div>
-                    <span>Step 4</span>
-                    <img src="https://drive.google.com/uc?id=134YFJ2wrDWPlhB4taVjs6iNMBtUV_mG6"/>
-                </div>
-                <div>
-                    <span>Step 5</span>
-                    <img src="https://drive.google.com/uc?id=1Nin8sue8Yd-dKWDNX4m2du4Xvgl7QYPU"/>
-                </div>
-                <div>
-                    <span>Step 6</span>
-                    <img src="https://drive.google.com/uc?id=18QI8BjrcsEV1hV8a4bqGRzoDpbjcbRY7"/>
-                </div>
-                <div>
-                    <span>Step 7 : Final</span>
-                    <img src="https://drive.google.com/uc?id=1u8gxe89BLnc869NcsPWmlLrZiRtpaK-p"/>
-                </div>
-
-            </div>
-            <div class="GdriveTransPreview">
-                <img src="" alt="No Image Yet" />
-            </div>
-        </section>
-
+        <div class="getCopyGdriveTransLink">
+          <pre class="getGdriveCopiedCodeDiv"></pre>
+          <button
+            class="getCopyGdriveTransLinkButton"
+            onclick="copyGdriveTransFunction()"
+          >
+            Copy Link
+          </button>
+        </div>
+      </section>
+      <section class="rightGdriveTransSection">
+        <span class="stepsFollow"
+          >To get your sharing URL, follow these steps
+          <i class="ri-arrow-down-s-line" onclick="showSteps()"></i
+        ></span>
+        <div class="howToUse">
+          <div>
+            <span>Step 1</span>
+            <img
+              src="https://drive.google.com/uc?id=1jmSXFWBPSXpeXdNvF4JxZM76N2pymouV"
+            />
+          </div>
+          <div>
+            <span>Step 2</span>
+            <img
+              src="https://drive.google.com/uc?id=1bZJqZk9vuoqyrniIi0kHqvk9_FYF4Lfh"
+            />
+          </div>
+          <div>
+            <span>Step 3</span>
+            <img
+              src="https://drive.google.com/uc?id=1Urvz5vmNUnZa9dAuJWuk8GSnnHDlcVxM"
+            />
+          </div>
+          <div>
+            <span>Step 4</span>
+            <img
+              src="https://drive.google.com/uc?id=134YFJ2wrDWPlhB4taVjs6iNMBtUV_mG6"
+            />
+          </div>
+          <div>
+            <span>Step 5</span>
+            <img
+              src="https://drive.google.com/uc?id=1Nin8sue8Yd-dKWDNX4m2du4Xvgl7QYPU"
+            />
+          </div>
+          <div>
+            <span>Step 6</span>
+            <img
+              src="https://drive.google.com/uc?id=18QI8BjrcsEV1hV8a4bqGRzoDpbjcbRY7"
+            />
+          </div>
+          <div>
+            <span>Step 7 : Final</span>
+            <img
+              src="https://drive.google.com/uc?id=1u8gxe89BLnc869NcsPWmlLrZiRtpaK-p"
+            />
+          </div>
+        </div>
+        <div class="GdriveTransPreview">
+          <img src="" alt="No Image Yet" />
+        </div>
+      </section>
     </main>
-<script src="/script.js"></script>
-</body>
+    <script src="/chunks/821.js"></script>
+    <script src="/chunks/822.js"></script>
+    <script src="/chunks/823.js"></script>
+    <script src="/chunks/824.js"></script>
+    <script src="/chunks/825.js"></script>
+    <script src="/chunks/826.js"></script>
+    <script src="/chunks/827.js"></script>
 
+  </body>
 </html>

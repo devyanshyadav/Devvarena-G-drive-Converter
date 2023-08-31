@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap");
+
+:root {
+    --Color1: #202040;
+    --Color2: #18122b;
+    --Color3: white;
+    --Color5: #4433ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--Color1);
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    overflow-y: scroll;
+}
+
+.DevvarenaLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 10px;
+    gap: 5px;
+    font-size: 25px;
+    background: linear-gradient(to right, #4433ff, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    user-select: none;
+}
+
+.DevvarenaLogo img {
+    width: 30px;
+}
+
+.gdriveTransHeader h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.DevvarenaLogo:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+button {
+    cursor: pointer;
+    background-color: var(--Color5);
+    border: 1px solid var(--Color5);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #4433ff9e;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gdriveTransHeader {
+    width: 100%;
+    height: 10%;
+    background-color: var(--Color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--Color2);
+    
+}
+
+.gdriveTransMain {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftGdriveTransSection {
+    width: 50%;
+    height: 100%;
+    background-color: var(--Color2);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px
+}
+
+.rightGdriveTransSection {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    flex-direction: column;
+    
+}
+
+.inputGdriveTransDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--Color1);
+    width: 500px;
+    max-width: 100%;
+    height: 35px;
+    border-radius: 30px;
+    padding-left: 9px;
+    border: 1px solid #4433ff84;
+
+
+}
+
+.inputGdriveTransDiv input {
+    width: 80%;
+    height: 100%;
+    background-color: transparent;
+    border: 0px;
+    color: var(--Color3);
+}
+
+.inputGdriveTransDiv input:focus {
+    outline: none;
+}
+
+.inputGdriveTransDiv button {
+    flex: 1;
+    height: 100%;
+    border-radius: 0px 30px 30px 0px;
+
+}
+
+.gdriveTransSettings {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    max-width: 100%;
+    gap: 20px;
+
+
+}
+
+.gdriveTransSettings span {
+    background-color: var(--Color1);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.selectGdriveTransLink {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.selectGdriveTransLink label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    cursor: pointer;
+}
+
+.getCopyGdriveTransLink {
+    width: 100%;
+    height: 70px;
+    background-color: var(--Color1);
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 5px;
+    border: 1px solid #4433ff6b;
+}
+
+.getCopyGdriveTransLink button {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.getCopyGdriveTransLink pre {
+    color: rgba(255, 255, 255, 0.461);
+}
+
+
+.gdriveConvertButton {
+    width: 75px;
+}
+
+
+.gdriveTransSettings div {
+    width: 100%;
+    height: 100px;
+    background-color: var(--Color1);
+    border-radius: 5px;
+    padding: 0px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.range-wrap {
+    padding-top: 5px;
+    position: relative;
+}
+
+.bubble {
+    background: var(--Color5);
+    color: var(--Color3);
+    padding: 2px 4px;
+    position: absolute;
+    border-radius: 3px;
+    left: 50%;
+    top: 58px;
+    transform: translateX(-50%);
+}
+
+.bubble::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 9px solid var(--Color5);
+    top: -7px;
+    left: 40%;
+}
+
+/* Cutomizing input range  */
+input[type=range] {
+    height: 4px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: var(--Color5);
+    border: 1px solid var(--Color2);
+    border-radius: 100px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    border: 2px solid var(--Color5);
+    height: 20px;
+    width: 20px;
+    border-radius: 23px;
+    background: var(--Color1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: var(--Color2);
+    border: 2px solid var(--Color5);
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: var(--Color1);
+    border-radius: 1px;
+    border: 2px solid var(--Color5);
+
+}
+
+input[type=range]::-moz-range-thumb {
+    border: 1px solid var(--Color2);
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: var(--Color1);
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: var(--Color1);
+    border: 1px solid var(--Color2);
+    border-radius: 2px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: var(--Color1);
+    border: 2px solid var(--Color5);
+    border-radius: 2px;
+
+}
+
+input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    border: 2px solid var(--Color5);
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: var(--Color1);
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: var(--Color2);
+    border: 2px solid var(--Color5);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: var(--Color2);
+    border: 2px solid var(--Color5);
+}
+
+.selectGdriveTransLink label {
+    background-color: var(--Color1);
+    padding: 7px;
+    border-radius: 4px;
+}
+
+.GdriveTransPreview {
+    width: 100%;
+    height: 100%;
+    background-color: var(--Color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 4px;
+
+}
+
+.GdriveTransPreview img {
+    width: 50%;
+    border: 1px solid #4433ffcd;
+    pointer-events: none;
+    padding: 10px;
+    color: white;
+    border-radius: 4px;
+}
+.howToUse {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #0f0c29;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    overflow-y: scroll;
+    display: none;
+
+}
+
+.howToUse div {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background-color: #202040;
+    border-radius: 6px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.howToUse div img {
+    width: 100%;
+    height: 100%;
+}
+
+.stepsFollow {
+    color: rgba(255, 255, 255, 0.558);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stepsFollow i {
+    color: var(--Color5);
+    font-size: 30px;
+}
+
+.stepsFollow i:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    color: white;
+    transform: scale(1.1);
+}
+
+.howToUse.active {
+    display: flex;
+}
+@media(max-width:600px) {
+    .gdriveTransMain {
+        flex-direction: column;
+    }
+
+    body {
+        height: auto;
+    }
+
+    .leftGdriveTransSection {
+        width: 100%;
+    }
+
+    .rightGdriveTransSection {
+        width: 100%;
+    }
+
+    .GdriveTransPreview {
+        width: 100%;
+    }
+
+    .DevvarenaLogo {
+        position: static;
+    }
+
+    .gdriveTransHeader {
+        flex-direction: column;
+        height: auto;
+        padding: 3px;
+    }
+
+    .gdriveTransHeader h3 {
+        font-size: 18px;
+    }
+    .stepsFollow{
+        display: none;
+    }
+
+}
+

@@ -32,7 +32,9 @@ body {
   font-family: "Ubuntu", sans-serif;
   overflow-y: scroll;
 }
-
+input{
+  accent-color: var(--Color5);
+}
 .DevvarenaLogo {
   display: flex;
   align-items: center;
